@@ -37,7 +37,7 @@ const Header = () => {
 						<a href="#" className="nav__link">
 							Login
 						</a>
-						<a href="#" className="nav__link">
+						<a href="#" datatype="narrow" className="nav__link | btn">
 							Sign up
 						</a>
 					</div>
