@@ -1,6 +1,10 @@
-// import Logo from "../assets/logo.svg"
+import { useState } from "react"
 
 const Header = () => {
+	const [click, setClick] = useState(false)
+
+	const toggleNavClick = () => setClick(!click)
+
 	return (
 		<header className="header">
 			<div className="container | content">
@@ -29,7 +33,7 @@ const Header = () => {
 						</ul>
 					</div>
 
-					<div className="buttons">
+					<div className="buttons | hide">
 						<a href="#" className="nav__link">
 							Login
 						</a>
@@ -39,7 +43,7 @@ const Header = () => {
 					</div>
 				</nav>
 
-				<nav className="mobile-nav">
+				<nav className={`mobile-nav ${click ? "show" : ""}`}>
 					<ul className="nav__links | primary">
 						<li>
 							<a href="#" className="nav__link">
@@ -65,21 +69,23 @@ const Header = () => {
 							</a>
 						</li>
 						<li>
-							<a href="#" className="nav__link">
+							<a href="#" className="nav__link | btn" datatype="wide">
 								Sign up
 							</a>
 						</li>
 					</ul>
 				</nav>
 
-				<div className="menu-icons">
-					<button>
-						<i className="fa-solid fa-close"></i>
-					</button>
-
-					<button>
-						<i className="fa-solid fa-bars"></i>
-					</button>
+				<div className="menu-icons" onClick={toggleNavClick}>
+					{click ? (
+						<button>
+							<i className="fa-solid fa-close"></i>
+						</button>
+					) : (
+						<button>
+							<i className="fa-solid fa-bars"></i>
+						</button>
+					)}
 				</div>
 			</div>
 		</header>
