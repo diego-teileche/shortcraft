@@ -366,22 +366,22 @@ input.error-input::placeholder {
   width: 100px;
 }
 
-.footer .footer__links .nav__links h4 {
+.footer .footer__links .navs__links h4 {
   margin-bottom: 1rem;
 }
 
-.footer .footer__links .nav__links {
+.footer .footer__links .navs__links {
   margin-bottom: 2rem;
 }
 
-.footer .footer__links .nav__links a {
+.footer .footer__links .navs__links a {
   color: var(--clr-neutral-300);
   margin-bottom: 0.5rem;
   font-size: .9rem;
   transition: color .2s ease-in;
 }
 
-.footer .footer__links .nav__links a:hover {
+.footer .footer__links .navs__links a:hover {
   color: var(--clr-primary-400);
 }
 
@@ -608,7 +608,7 @@ input.error-input::placeholder {
     gap: 4rem;
   }
 
-  .nav__links {
+  .navs__links {
     display: flex;
     flex-direction: column;
     gap: .4rem;
