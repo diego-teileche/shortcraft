@@ -348,11 +348,59 @@ input.error-input::placeholder {
   padding-block: 4rem;
   text-align: center;
   color: var(--clr-neutral-100);
-  margin-bottom: 5rem;
 }
 
 .boost h2 {
   margin-bottom: 1rem;
+}
+
+.footer {
+  padding-top: 5rem;
+  background-color: var(--clr-neutral-700);
+  text-align: center;
+  color: var(--clr-neutral-100);
+}
+
+.footer .footer__content .logo img {
+  margin-bottom: 2rem;
+  width: 100px;
+}
+
+.footer .footer__links .nav__links h4 {
+  margin-bottom: 1rem;
+}
+
+.footer .footer__links .nav__links {
+  margin-bottom: 2rem;
+}
+
+.footer .footer__links .nav__links a {
+  color: var(--clr-neutral-300);
+  margin-bottom: 0.5rem;
+  font-size: .9rem;
+  transition: color .2s ease-in;
+}
+
+.footer .footer__links .nav__links a:hover {
+  color: var(--clr-primary-400);
+}
+
+.footer .footer__links .social__links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding-bottom: 5rem;
+}
+
+.footer .footer__links .social__links a {
+  font-size: 1.5rem;
+  color: var(--clr-neutral-100);
+  transition: color .2s ease-in;
+}
+
+.footer .footer__links .social__links a:hover {
+  color: var(--clr-primary-400);
 }
 
 @media (min-width: 768px) {
@@ -544,5 +592,34 @@ input.error-input::placeholder {
   
   .hero__content p {
     margin-bottom: 2.5rem;
+  }
+
+  .footer {
+    text-align: left;
+  }
+  
+  .footer__content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .footer__links {
+    display: flex;
+    gap: 4rem;
+  }
+
+  .nav__links {
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+  }
+
+  .social__links {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .social__links a {
+    margin-left: 5rem;
   }
 }
