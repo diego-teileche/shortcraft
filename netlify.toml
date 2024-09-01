@@ -1,0 +1,10 @@
+[build]
+  functions = "functions"
+
+[dev]
+  functions = "functions"
+  framework = "vite"
+  targetPort = 5173
+
+[functions]
+  directory = "functions"

@@ -18,10 +18,11 @@ const Shorten = () => {
 				headers: {
 					"Content-Type": "application/x-www-form-urlencoded",
 				},
-				body: JSON.stringify({ url }),
+				body: new URLSearchParams({ url }),
 			})
 
-			console.log(res)
+			const data = await res.json()
+			console.log(data)
 		} catch (error) {
 			console.error("Error: ", error)
 		}
