@@ -1,4 +1,4 @@
-import { FormEvent, useState } from "react"
+import { FormEvent, useEffect, useState } from "react"
 
 interface ShortenedUrlProps {
 	originalUrl: string
@@ -7,10 +7,19 @@ interface ShortenedUrlProps {
 
 const Shorten = () => {
 	const [url, setUrl] = useState("")
-	const [shortenedUrls, setShortenedUrls] = useState<ShortenedUrlProps[]>([])
+	const [shortenedUrls, setShortenedUrls] = useState<ShortenedUrlProps[]>(
+		() => {
+			const storedUrls = localStorage.getItem("shortenUrl")
+			return storedUrls ? JSON.parse(storedUrls) : []
+		}
+	)
 	const [errorMessage, setErrorMessage] = useState("")
 	const [loading, setLoading] = useState(false)
 	const [copiedIndex, setCopiedIndex] = useState<number | null>(null)
+
+	useEffect(() => {
+		localStorage.setItem("shortenUrl", JSON.stringify(shortenedUrls))
+	}, [shortenedUrls])
 
 	const handleSubmit = async (e: FormEvent) => {
 		e.preventDefault()
